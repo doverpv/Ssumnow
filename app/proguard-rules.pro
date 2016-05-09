@@ -15,3 +15,12 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class com.kakao.** { *; }
+-keepattributes Signature
+-keepclassmembers class * {
+  public static <fields>;
+  public *;
+}
+-dontwarn android.support.v4.**,org.slf4j.**,com.google.android.gms.**
+Kakao 계정 로그인이 필요한 앱설정

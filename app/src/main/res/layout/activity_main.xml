@@ -16,28 +16,26 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            app:tabSelectedTextColor="@color/colorPrimaryDark"
+            app:tabSelectedTextColor="@color/colorAccent"
             app:tabIndicatorColor="@color/colorAccent"
             app:tabIndicatorHeight="2dp"
-            android:background="#9b4a4a">
+            android:elevation="2dp"
+            android:background="@color/colorPrimary">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tab1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/tab1_name"/>
+                android:layout_height="match_parent"/>
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tab2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/tab2_name"/>
+                android:layout_height="match_parent"/>
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tab3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/tab3_name"/>
+                android:layout_height="match_parent"/>
 
         </android.support.design.widget.TabLayout>
 

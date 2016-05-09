@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kakao_app_key">6c8843cf26c63e35e96b953cf2cfddd8</string>
+</resources>
+
+<!-- keytool -exportcert -alias androiddebugkey -keystore C:\Users\hhylu\.android\debug.keystore -storepass android -keypass android | C:\OpenSSL-Win64\bin\openssl sha1 -binary | C:\OpenSSL-Win64\bin\openssl base64
+mhYNsp4QdHcL4idJ4iaxXP/xQT4= -->
