@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        tabLayout.getTabAt(0).setIcon(R.drawable.tab1);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
 
-        @Override
+        /*@Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
@@ -144,6 +146,6 @@ public class MainActivity extends AppCompatActivity {
                     return getString(R.string.tab3_name);
             }
             return null;
-        }
+        }*/
     }
 }
