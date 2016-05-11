@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "@string/tab1_name";
+                    return getString(R.string.tab1_name);
                 case 1:
-                    return "@string/tab2_name";
+                    return getString(R.string.tab2_name);
                 case 2:
-                    return "@string/tab3_name";
+                    return getString(R.string.tab3_name);
             }
             return null;
         }

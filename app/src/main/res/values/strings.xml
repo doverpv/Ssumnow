@@ -5,4 +5,14 @@
     <string name="tab1_name">Ssumnow</string>
     <string name="tab2_name">Chat</string>
     <string name="tab3_name">My Page</string>
+
+    <string name="kakao_app_key">6c8843cf26c63e35e96b953cf2cfddd8</string>
+
+    <string name="error_message_for_service_unavailable">Unstable network connection. \nPlease try again later.</string>
+    <string name="signup_nickname_hint">닉네임</string>
+    <string name="signup_age_hint">나이</string>
+    <string name="signup_female">여자</string>
+    <string name="signup_male">남자</string>
+    <string name="usermgmg_signup_button">가입하기</string>
+
 </resources>
