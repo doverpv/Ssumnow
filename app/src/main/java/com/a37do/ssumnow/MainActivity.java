@@ -54,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.tab1);
+        tabLayout.getTabAt(0).setIcon(R.drawable.selector_tab1).setCustomView(R.layout.tab_icon);
+        tabLayout.getTabAt(1).setIcon(R.drawable.selector_tab2).setCustomView(R.layout.tab_icon);
+        tabLayout.getTabAt(2).setIcon(R.drawable.selector_tab3).setCustomView(R.layout.tab_icon);
 
+        tabLayout.getTabAt(1).select();
+        tabLayout.getTabAt(0).select();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -134,18 +138,5 @@ public class MainActivity extends AppCompatActivity {
             // Show 3 total pages.
             return 3;
         }
-
-        /*@Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return getString(R.string.tab1_name);
-                case 1:
-                    return getString(R.string.tab2_name);
-                case 2:
-                    return getString(R.string.tab3_name);
-            }
-            return null;
-        }*/
     }
 }

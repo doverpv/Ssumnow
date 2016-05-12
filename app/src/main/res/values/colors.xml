@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#e52d27</color>
+    <color name="colorPrimaryDark">#b31217</color>
+    <color name="colorAccent">#FFFFFF</color>
 
     <!-- NEW DISIGN -->
     <color name="color1">#404040</color>
@@ -15,7 +15,7 @@
     <color name="color8">#4A4A4C</color>
     <color name="color9">#BDD1DC</color>
 
-    <color name="tab_background">#d83e32</color>
+    <color name="tab_background">#e52d27</color>
     <color name="tab_focus">#FFFFFF</color>
     <color name="tab_text">#64ffffff</color>
 </resources>

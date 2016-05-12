@@ -32,7 +32,6 @@ public class SignUpActivity extends BaseActivity {
     private EditText name;
     private EditText age;
     private RadioGroup gender;
-
     private UserProfile userProfileValue;
 
     @Override
@@ -167,8 +166,9 @@ public class SignUpActivity extends BaseActivity {
         intent.putExtra(AGE_KEY, age);
         intent.putExtra(GENDER_KEY, gender);
 
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
-
+        overridePendingTransition(0, 0);
         finish();
     }
 }
