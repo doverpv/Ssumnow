@@ -5,27 +5,45 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@color/color2"
+    android:fitsSystemWindows="false"
     tools:context="com.a37do.ssumnow.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:id="@+id/toolbar_frame"
+            android:background="#aa000000"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/tab_background_gradation"
+            android:layout_below="@id/toolbar_frame">
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
             app:tabTextColor="@color/tab_text"
             app:tabSelectedTextColor="@color/tab_focus"
-            app:tabIndicatorColor="@color/tab_focus"
+            app:tabIndicatorColor="#00000000"
             app:tabIndicatorHeight="2dp"
-            android:elevation="2dp"
-            android:background="@color/tab_background"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tab1"
@@ -43,34 +61,50 @@
                 android:layout_height="match_parent"/>
 
         </android.support.design.widget.TabLayout>
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/tabs" />
+        </FrameLayout>
 
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="80dp"
+        app:backgroundTint="#e91e63"
+        android:src="@drawable/heart" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab2"
+        android:id="@+id/fab_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        app:fabSize="normal"
-        app:backgroundTint="@color/colorPrimary"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="80dp"
+        app:backgroundTint="#00BCD4"
+        android:src="@drawable/no" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="220dp"
+        app:fabSize="mini"
+        app:backgroundTint="#00BCD4"
+        android:src="@drawable/back" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_superlike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="220dp"
+        app:fabSize="mini"
+        app:backgroundTint="#e91e63"
+        android:src="@drawable/star" />
 
 </android.support.design.widget.CoordinatorLayout>

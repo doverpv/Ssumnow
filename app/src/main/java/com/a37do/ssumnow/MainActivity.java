@@ -12,12 +12,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TabFragment1 tab1;
     private TabFragment2 tab2;
     private TabFragment3 tab3;
+    private Animation animBounceUp;
+    private Animation animBounceUpRight;
+    private Animation animBounceUpLeft;
+    private Animation animBounceDown;
+    private Animation animBounceDownRight;
+    private Animation animBounceDownLeft;
+    private FloatingActionButton fabLike;
+    private FloatingActionButton fabSuperLike;
+    private FloatingActionButton fabNo;
+    private FloatingActionButton fabBack;
+    private boolean isFabUp = true;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,9 +52,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //View to be drawn under status bar
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
         tab1 = new TabFragment1();
         tab2 = new TabFragment2();
         tab3 = new TabFragment3();
+
+        fabLike = (FloatingActionButton) findViewById(R.id.fab_like);
+        fabSuperLike = (FloatingActionButton) findViewById(R.id.fab_superlike);
+        fabNo = (FloatingActionButton) findViewById(R.id.fab_no);
+        fabBack = (FloatingActionButton) findViewById(R.id.fab_back);
+
+        animBounceDown = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_down);
+        animBounceUp = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_up);
+        animBounceUpRight = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_up_right);
+        animBounceUpLeft = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_up_left);
+        animBounceDownRight = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_down_right);
+        animBounceDownLeft = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_down_left);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -54,14 +84,18 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.selector_tab1).setCustomView(R.layout.tab_icon);
-        tabLayout.getTabAt(1).setIcon(R.drawable.selector_tab2).setCustomView(R.layout.tab_icon);
-        tabLayout.getTabAt(2).setIcon(R.drawable.selector_tab3).setCustomView(R.layout.tab_icon);
+        final TabLayout.Tab tab1 = tabLayout.getTabAt(0);
+        final TabLayout.Tab tab2 = tabLayout.getTabAt(1);
+        final TabLayout.Tab tab3 = tabLayout.getTabAt(2);
+
+        tab1.setIcon(R.drawable.selector_tab1).setCustomView(R.layout.tab_icon);
+        tab2.setIcon(R.drawable.selector_tab2).setCustomView(R.layout.tab_icon);
+        tab3.setIcon(R.drawable.selector_tab3).setCustomView(R.layout.tab_icon);
 
         tabLayout.getTabAt(1).select();
         tabLayout.getTabAt(0).select();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_like);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,8 +104,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ViewPager.SimpleOnPageChangeListener pageChangeListener = new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                switch (position) {
+                    case 0:
+                        moveFabUp();
+                        break;
+                    case 1:
+                        moveFabDown();
+                        break;
+                    case 2:
+                        moveFabDown();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        };
+
+        mViewPager.addOnPageChangeListener(pageChangeListener);
+
     }
 
+    private void moveFabUp() {
+        if (!isFabUp) {
+            fabLike.startAnimation(animBounceUp);
+            fabNo.startAnimation(animBounceUp);
+            fabBack.startAnimation(animBounceUpRight);
+            fabSuperLike.startAnimation(animBounceUpLeft);
+            isFabUp = true;
+        }
+    }
+
+    private void moveFabDown() {
+        if (isFabUp) {
+            fabLike.startAnimation(animBounceDown);
+            fabNo.startAnimation(animBounceDown);
+            fabBack.startAnimation(animBounceDownLeft);
+            fabSuperLike.startAnimation(animBounceDownRight);
+            isFabUp = false;
+        }
+    }
     /**
      * A placeholder fragment containing a simple view.
      */

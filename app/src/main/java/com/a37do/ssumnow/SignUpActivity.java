@@ -43,6 +43,10 @@ public class SignUpActivity extends BaseActivity {
     protected void showSignup() {
         setContentView(R.layout.signup);
 
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
         name = (EditText) findViewById(R.id.name);
         age = (EditText) findViewById(R.id.age);
         gender = (RadioGroup) findViewById(R.id.gender);
