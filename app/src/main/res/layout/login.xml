@@ -3,8 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="#ffffff"
     tools:context="com.a37do.ssumnow.LoginActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:id="@+id/toolbar_frame"
+        android:background="#64000000"
+        />
 
     <com.kakao.usermgmt.LoginButton
         android:id="@+id/com_kakao_login"
@@ -15,5 +22,14 @@
         android:layout_marginRight="20dp"
         android:layout_alignParentBottom="true">
     </com.kakao.usermgmt.LoginButton>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo_color"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="50dp"/>
 
 </RelativeLayout>

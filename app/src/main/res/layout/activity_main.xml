@@ -37,8 +37,6 @@
             android:id="@+id/tabs"
             android:layout_width="170dp"
             android:layout_height="45dp"
-            app:tabTextColor="@color/tab_text"
-            app:tabSelectedTextColor="@color/tab_focus"
             app:tabIndicatorColor="#00000000"
             app:tabIndicatorHeight="2dp"
             android:layout_alignParentLeft="true"
@@ -72,7 +70,7 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="80dp"
-        app:backgroundTint="#e91e63"
+        app:backgroundTint="@color/colorPrimary"
         android:src="@drawable/heart" />
 
     <android.support.design.widget.FloatingActionButton
@@ -82,7 +80,7 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="80dp"
-        app:backgroundTint="#00BCD4"
+        app:backgroundTint="@color/colorAccent"
         android:src="@drawable/no" />
 
     <android.support.design.widget.FloatingActionButton
@@ -93,7 +91,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginRight="220dp"
         app:fabSize="mini"
-        app:backgroundTint="#00BCD4"
+        app:backgroundTint="@color/colorAccent"
         android:src="@drawable/back" />
 
     <android.support.design.widget.FloatingActionButton
@@ -104,7 +102,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="220dp"
         app:fabSize="mini"
-        app:backgroundTint="#e91e63"
+        app:backgroundTint="@color/colorPrimary"
         android:src="@drawable/star" />
 
 </android.support.design.widget.CoordinatorLayout>

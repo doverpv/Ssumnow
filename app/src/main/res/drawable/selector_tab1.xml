@@ -5,5 +5,5 @@
         android:drawable="@drawable/tab1" />
     <item
         android:state_selected="false"
-        android:drawable="@drawable/tab1_transparant50" />
+        android:drawable="@drawable/tab1_transparant40" />
  </selector>
